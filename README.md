@@ -1,54 +1,54 @@
 # kali-anonstealth
 
-ParrotSec's anonsurf and stealth, ported to work with Kali Linux.
+ParrotSec's anonsurf und stealth, portiert für die Arbeit mit Kali Linux.
 
-## How to use this repo
+## Wie man diese Repo benutzt
 
-This repo contains the sources of both the anonsurf and pandora packages from ParrotSec combined into one.
+Dieses Repo enthält die Quellen der beiden Pakete anonsurf und pandora von ParrotSec kombiniert in einem.
 
-Modifications have been made to use the DNS servers of Private Internet Access (instead of FrozenDNS), and fixes for users who don't use the resolvconf application. I have removed some functionality such as the gui and iceweasel in ram.
+Es wurden Änderungen vorgenommen, um die DNS-Server von Private Internet Access (anstelle von FrozenDNS) zu verwenden, sowie Korrekturen für Benutzer, die die Anwendung resolvconf nicht verwenden. Ich habe einige Funktionen wie die GUI und iceweasel in ram entfernt.
 
-This repo can be compiled into a deb package to correctly install it on a Kali system.
+Dieses Repo kann in ein deb-Paket kompiliert werden, um es korrekt auf einem Kali-System zu installieren.
 
-The easiest way to get this working is to just run the installer. See the installation section for further info.
+Der einfachste Weg, diese zum Laufen zu bringen, ist, einfach den Installer auszuführen. Weitere Informationen finden Sie im Abschnitt über die Installation.
 
-NOTE: This may work with any debian/ubuntu system, but this has only been tested to work on a kali-rolling amd64 system
+HINWEIS: Dies kann mit jedem Debian-/Ubuntu-System funktionieren, aber sie wurde nur auf einem Kali-Rolling-Amd64-System getestet
 
 ## Usage
 ### Pandora
-Pandora automatically overwrites the RAM when the system is shutting down. Pandora can also be ran manually:
+Pandora überschreibt das RAM automatisch, wenn das System heruntergefahren wird. Pandora kann auch manuell ausgeführt werden:
 ```bash
 pandora bomb
 ```
 
-NOTE: This will clear the entire system cache, including active SSH tunnels or sessions.
+HINWEIS: Dadurch wird der gesamte System-Cache gelöscht, einschließlich aktiver SSH-Tunnel oder -Sitzungen.
 
 ### anonsurf
-Anonsurf will anonymize the entire system under TOR using IPTables. It will also allow you to start and stop i2p as well.
+Anonsurf wird das gesamte System unter TOR mit IPTables anonymisieren. Es wird Ihnen auch erlauben, i2p zu starten und zu stoppen.
 
-NOTE: DO NOT run this as ```service anonsurf $COMMAND```. Run this as ```anonsurf $COMMAND```
+HINWEIS: Führen Sie dies NICHT als ```service anonsurf $COMMAND``` aus. Führen Sie dies als ```anonsurf $COMMAND`` aus.
 
 ```bash
-Usage:
+Benutzung:
  anonsurf {start|stop|restart|change|status}
 
- start - Start system-wide anonymous
-          tunneling under TOR proxy through iptables
- stop - Reset original iptables settings
-          and return to clear navigation
- restart - Combines "stop" and "start" options
- change - Changes identity restarting TOR 
- status - Check if AnonSurf is working properly
-----[ I2P related features ]----
- starti2p - Start i2p services
- stopi2p - Stop i2p services
+ start - Starten Sie das systemweite anonyme
+           Tunneling unter TOR-Proxy durch iptables
+ stop - Ursprüngliche iptables-Einstellungen zurücksetzen
+          und zurück zur freien Navigation
+ restart - Kombiniert "Stopp" und "Start" Optionen
+ change - Änderungen der Identität Neustart von TOR 
+ status - Prüfen Sie, ob AnonSurf richtig funktioniert
+----[ I2P zugehörige Funktionen ]----
+ starti2p - Starte i2p Dienste
+ stopi2p - Stoppe i2p Dienste
 ```
 
 ## Installation
-This package comes with an installer that makes things extremely easy:
+Dieses Paket wird mit einem Installationsprogramm geliefert, das die Dinge extrem einfach macht:
 
 ```bash
 ./installer.sh
 ```
 
-Once the installer is complete, you will be able to use both the anonsurf and pandora modules.
+Sobald das Installationsprogramm abgeschlossen ist, können Sie sowohl das anonsurf- als auch das pandora-Modul verwenden.
